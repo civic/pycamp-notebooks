@@ -49,8 +49,8 @@ Windows で Python を利用する場合は、Python の公式サイトで配布
 「 Python Release Python 3.6.7 」（<https://www.python.org/downloads/release/python-367/>）をブラウザで開きます。  
 OS によって以下のいずれかのインストーラーをダウンロードし、ウィザードに従ってインストールします。
 
-64 ビット版: [Windows x86-64 executable installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7-amd64.exe)
-32 ビット版: [Windows x86 executable installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7.exe)
+* 64 ビット版: [Windows x86-64 executable installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7-amd64.exe)
+* 32 ビット版: [Windows x86 executable installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7.exe)
 
 ##### Add Python 3.6 to PATH
 
@@ -70,8 +70,8 @@ Mac OS で Python3 をインストールする方法には、Python の公式サ
 
 OS によって以下のいずれかのインストーラーをダウンロードし、ウィザードに従ってインストールします。
 
-10.9 以降: [macOS 64-bit installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7-macosx10.9.pkg)
-10.6 以降: [macOS 64-bit/32-bit installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7-macosx10.6.pkg)
+* 10.9 以降: [macOS 64-bit installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7-macosx10.9.pkg)
+* 10.6 以降: [macOS 64-bit/32-bit installer](https://www.python.org/ftp/python/3.6.7/python-3.6.7-macosx10.6.pkg)
 
 ## Python のインストール(Linux 版)
 
