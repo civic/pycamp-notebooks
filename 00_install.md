@@ -37,7 +37,7 @@ python 3.x.x がインストールされている場合、python3 というコ�
 
 ```bash
 $ python3 -V
-Python 3.6.5
+Python 3.6.7
 ```
 
 ## Python のインストール(Windows 版)
@@ -93,7 +93,7 @@ Windows
 
 ```bat
 C:\Users\Taro>python -V
-Python 2.7.15
+Python3 3.6.7
 ```
 
 macOS / linux
@@ -191,7 +191,227 @@ $ source activate myvenv # 環境の有効化
 (myvenv) $ source deactivate # 環境の無効化
 ```
 
+## pipとは？
+
+pipはPython3に標準で付属するライブラリパッケージの管理ツールです。
+
+インターネット上のリポジトリにあるライブラリパッケージをダウンロードしてインストールできます。
+
+ライブラリ同士の依存関係を管理しており、ライブラリに必要な他のライブラリも自動的にダウンロードしてインストールします。
+
+## pipの使い方 - 主なコマンド
+
+ライブラリのインストール
+`pip install パッケージ名`
+
+バージョンを指定してインストール
+`pip install パッケージ名==バージョン`
+
+パッケージのアップグレード
+`pip install パッケージ名 --upgrade`
+
+パッケージの検索
+`pip search 検索ワード`
+
+インストール済みパッケージの一覧
+`pip list`
+
+パッケージのアンインストール
+`pip uninstall パッケージ名`
+
+
 ## 確認 ✔
 
-仮想環境の作成、アクティブ化、無効化ができること。
+* 仮想環境 hogeの作成 アクティブ化
+* ライブラリ requestsのインストール
+* インストールされたライブラリの一覧を確認
+* 仮想環境 hogeの無効化ができること
+
+(確認後は、使用しないのでhogeディレクトリを削除してOK)
+
+Windows
+```bat
+C:\Users\Taro> python -m venv hoge
+C:\Users\Taro> hoge\Scripts\activate
+
+(hoge) C:\Users\Taro> pip install requests
+...
+Successfully installed ...
+(hoge) C:\Users\Taro> pip list
+...
+requests   2.21.0
+...
+
+(hoge) C:\Users\Taro> deactivate
+C:\Users\Taro> deactivate
+```
+
+macOS / linux
+```bash
+$ python3 -m venv hoge
+$ source hoge/bin/activate
+(hoge) $ pip install requests
+...
+Successfully installed ...
+(hoge) $ pip list
+...
+requests   2.21.0
+...
+
+(hoge) $ deactivate
+$ 
+```
+
+# Jupyterのインストール
+
+Webブラウザ上のPython開発・実験環境
+
+## Jupyterとは？
+
+JupyterはWebブラウザ上でPythonプログラムの編集・実行ができるツールです。
+
+実行中は変数やオブジェクトがKernelというプロセスの中に保持されるため、インタラクティブなプログラム開発ができます。
+
+Notebookと呼ばれるファイルには、プログラムだけではなく、ブログで使われているMarkdown と呼ばれる簡易記法によりドキュメントが記述でき、数式もLaTex記法によりきれいに表示できます。
+
+文字だけではなく、グラフや画像などのプログラムの出力もNotebookに保存できます。
+
+NotebookはHTMLやTeX、PDFなどの形でダウンロードできます。
+
+## Jupyterのインストール
+
+Jupyterはpipコマンドでインストールできます。Jupyterに必要な様々なライブラリも自動的にインストールされます。
+
+
+* 今回の勉強会用の仮想環境 python-ml-env を作成
+* アクティブにして仮想環境にJupyterをインストール
+
+Windows
+```bat
+C:\Users\Taro> python -m venv python-ml-env
+C:\Users\Taro> python-ml-env\Scripts\activate
+(python-ml-env) C:\Users\Taro> pip install jupyter
+```
+
+Linux / macOS
+```
+$ python –m venv python-ml-env
+$ python-ml-env/bin/activate
+(python-ml-env) $ pip install jupyter
+```
+
+## Python入門教材のダウンロード
+
+今回使用するテキストはJupyter Notebookとなっています。
+
+下記のURLからダウンロードしzipファイルを展開します。
+
+<https://github.com/civic/pycamp-notebooks>
+
+![Python入門教材のダウンロード](images/download-repo.png)
+
+## Jupyterの起動
+
+JupyterでNotebookを使うには、Pythonの仮想環境でZIPファイルを解凍したディレクトリで、下記のコマンドを実行します。
+
+```
+jupyter notebook
+```
+
+プログラムが起動すると、起動したパソコン上のポート番号5000版でサーバーが起動し、既定のWebブラウザが起動されてこのサーバー使ってファイル一覧ページが表示されます。
+
+![ファイルの一覧](images/jupyter-notebook-file-list.png)
+
+## 確認 ✔
+
+Jupyterが起動し、ブラウザでzipファイルを展開したディレクトリのファイル一覧が表示されること。
+
+## 新規ノートブックを作成
+
+![新規ノートブックを作成](images/create-new-notebook.png)
+
+
+## セルの選択 (マークダウンセル)
+
+![セルの選択](images/selected-cell.png)
+
+## セルの選択（コードセル)
+
+![セルの選択](images/selected-code-cell.png)
+
+## ツールバー
+
+![ツールバー](images/toolbar.png)
+
+
+## セルの編集 (マークダウンセル)
+
+セルを「実行」すると、Markdownが解釈され書式が適用されます。
+
+![マークダウンセルの編集](images/edit-markdown-cell.png)
+
+
+セルを実行するには、「Run」ボタンをクリックするか、Ctrl + Return あるいはShift + Returnを入力します。
+
+RunボタンあるいはShift + Returnではカレントセルが下に移ります。
+
+## セルの編集 (コードセル)
+
+セルを「実行」すると、Pythonプログラムが実行され、出力があれば表示されます。
+
+![コードセルの編集](images/edit-code-cell.png)
+
+セルを実行するには、「Run」ボタンをクリックするか、Ctrl + Return あるいはShift + Returnを入力します。
+
+RunボタンあるいはShift + Returnではカレントセルが下に移ります。
+
+## 実行中のJupyter Serverと停止
+
+![実行中のJupyter Serverと停止](images/running-jupyter-stop.png)
+
+## Jupyterの認証機能
+
+既定では起動時に生成されたトークンで認証が行われます。 パスワードを設定することも可能です。
+
+パスワード認証を設定するには起動時に以下のように下記のコマンドを入力します。
+
+```
+$ jupyter notebook password
+```
+
+## Jupyter関連情報
+
+* デフォルトブラウザ以外のブラウザを起動
+    * Windows環境でのJupyter Notebookのブラウザ指定  
+    <https://qiita.com/acknpop/items/4e5b57e38780068a9155>
+    * Jupyter Notebookで使うブラウザを指定する。特にMac。 （とVivaldi）  
+    <https://qiita.com/nannoki/items/315a12a8700c1ca92da3>
+* パスワード設定  
+    * `$ jupyter notebook --generate-config`  
+    * `$ jupyter notebook password`
+* Markdown記法
+    * かんたんMarkdownの記法  
+    <https://tatesuke.github.io/KanTanMarkdown/syntax.html>
+* 数式記法(Jupyter 公式ドキュメント） 
+    * <https://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Typesetting%20Equations.html>
+* 拡張機能（Jupyter Extentions）
+    * [作業効率化] Jupyterの拡張機能を全部調べてみた  
+    <https://qiita.com/simonritchie/items/88161c806197a0b84174>
+* 日本語PDF出力
+    * 日本語のJupyter NotebookをPDFとしてダウンロードする  
+    <https://qiita.com/masa-ita/items/8d5ebe8afe0d580af184>
+
+## （補足）機械学習関連ライブラリのインストール
+
+画像分類のハンズオンで使用するライブラリを、この仮想環境python-ml-envにあからじめインストールしておくと、
+ハンズオンの進行がスムーズになると思います。
+
+* tensorflow
+* keras
+* pillow
+* matplotlib 
+
+```bat
+(python-ml-env) C:\Users\Taro> pip install tensorflow keras pillow matplotlib
+```
 
