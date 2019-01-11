@@ -6,6 +6,8 @@
 * venv 環境の構築
 * Jupyter のインストール
 
+(Windows向けに環境設定用動画を用意しました。<https://youtu.be/PolWSm7-tiY>)
+
 # Python のインストール
 
 ## Python 入ってますか？
@@ -16,6 +18,7 @@ Windows には Python が入っていませんが、Mac OS や Linux には Pyth
 コマンドプロンプト(Windows)などの環境で、 `python -V`と入力します。
 
 今回は Python3.6 を使用します。今回の学習環境では conda 向けには書いてありません。公式の Python での説明になっています。
+
 
 ## Windows の場合(コマンドプロンプト)
 
