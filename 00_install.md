@@ -299,7 +299,7 @@ C:\Users\Taro> python-ml-env\Scripts\activate
 Linux / macOS
 ```
 $ python –m venv python-ml-env
-$ python-ml-env/bin/activate
+$ source python-ml-env/bin/activate
 (python-ml-env) $ pip install jupyter
 ```
 
